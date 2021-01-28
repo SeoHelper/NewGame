@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Клиентские игры{% endblock %}
+{% block content %}
+    {% for el in games %}
+<div class="col-12 col-md-6 col-sm-12 mb-4">
+		<div class="card border-0">
+			<div class="card_header">
+				    <div class="main_position">{{ el.id }}</div>
+				    <div itemprop="name" class="main_name"> {{ el.name }}</div>
+			</div>
+    <a class="main_image" target="_blank" href="{{ el.link_game }}"><img src="{{ el.link_img }}" alt="{{ el.id }}" width="558" height="316" border="0" class="card-img-top"/></a>
+		<div class="card-body linear_gradient">
+		  <div class="card_body_footer">
+<p class="card_description">
+	<span style="font-size: 14pt;"><strong>Тип: </strong></span><span style="color: #ff9900;">{{ el.type }}</span><br>
+	<span style="font-size: 14pt;"><strong>Жанр: </strong></span><span style="color: #ff9900;">{{ el.janr }}</span><br>
+	<span style="font-size: 14pt;"><strong>Особенности игры: </strong></span><span style="color: #ff9900;">{{ el.osobenosti }}</span><br/><br>
+	<strong>{{ el.name }}</strong> – {{ el.discript }}</p>
+		<span style="font-size: 14pt;"><strong><img src="image/video.png" width="44" height="32"/>Видео: </strong></span><span style="color: #ff9900;"><a style="font-size: 12pt;text-decoration: underline;color: #ff9900;" href="#" onclick="openbox('box'); return false">показать/скрыть</a></span><br/>
+ <div id="box" style="display: none;">
+ <iframe width="100%" height="315" src="ht  tps://www.youtube.com/embed/ySJFlwGsdVM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div>
+		  </div>
+		  </div>
+		</div>
+	</div>
+    {% endfor %}
+{% endblock %}

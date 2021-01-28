@@ -1,0 +1,10 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}Клиентские игры{%endblock%}
+{% block content %}
+    {% for el in games %}
+        <h3>{{ el.name }}</h3>
+        <p>{{ el.discript }}</p>
+    {% endfor %}
+{% endblock %}
+
